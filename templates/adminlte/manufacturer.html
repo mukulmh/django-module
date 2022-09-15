@@ -101,10 +101,11 @@
                                 </button>
                               </div>
                               <div class="modal-body">
-                                <form class="form-horizontal" action="{% url 'edit-manufacturer' id=manufacturer.id %}" method="post">{% csrf_token %}
+                                <form class="form-horizontal" action="{% url 'edit-manufacturer' %}" method="post">{% csrf_token %}
                                   <div class="form-group row">
                                     <label for="name" class="col-sm-3 col-form-label">Name</label>
                                     <div class="col-sm-9">
+                                      <input type="text" hidden class="form-control" name="id" id="id" value="{{manufacturer.id}}">
                                       <input type="text" class="form-control" name="name" id="name" value="{{manufacturer.name}}">
                                     </div>
                                   </div>
@@ -132,8 +133,20 @@
                                 </button>
                               </div>
                               <div class="modal-body">
-                                <p>Are you sure want to delete <strong>{{manufacturer.name}}</strong>?</p>
-                                <a class="btn btn-outline-light" href="{% url 'delete-manufacturer' id=manufacturer.id %}">Delete</a>
+                                <form class="form-horizontal" action="{% url 'delete-manufacturer' %}" method="post">{% csrf_token %}
+                                  <div class="form-group row">
+                                    <label for="name" class="col-sm-3 col-form-label">Name</label>
+                                    <div class="col-sm-9">
+                                      <input type="text" readonly class="form-control" name="name" id="name" value="{{manufacturer.name}}">
+                                      <input type="text" hidden class="form-control" name="id" id="id" value="{{manufacturer.id}}">
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <div class="offset-sm-3 col-sm-9">
+                                      <button type="submit" class="btn btn-outline-light">Delete</button>
+                                    </div>
+                                  </div>
+                                </form>
                               </div>
                             </div>
                             <!-- /.modal-content -->
@@ -145,7 +158,9 @@
                         <td>{{manufacturer.name}}</td>
                         <td>
                           <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit-manufacturer-{{manufacturer.id}}"> <i class="fa fa-pen"></i> </a>
+                          {% if role == 1 %}
                           <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-manufacturer-{{manufacturer.id}}"><i class="fa fa-trash"></i></a>
+                          {% endif %}
                         </td>
                       </tr>
                       {% endfor %}
