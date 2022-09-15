@@ -65,9 +65,10 @@ def login(request):
 
                 auth.login(request,user) 
                 # return JsonResponse(moduleData, safe=False) 
+                messages.success(request, 'Login success!')
                 return redirect('profile')
             else:
-                messages.info(request, 'Invalid email or password!')
+                messages.error(request, 'Invalid email or password!')
         return render(request, 'auth/login-v2.html', {'form': form})
     return render(request, 'auth/login-v2.html')
 
@@ -83,16 +84,16 @@ def register(request):
             password2 = request.POST['password2']
             if password1 == password2:
                 if Account.objects.filter(username=username):
-                    messages.info(request,'Username is already taken!')
+                    messages.error(request,'Username is already taken!')
                 elif Account.objects.filter(email=email):
-                    messages.info(request, 'Email is already been taken!')
+                    messages.error(request, 'Email is already been taken!')
                 else:
                     user = Account.objects.create_user(username=username, email=email, password=password1)
                     user.save()
-                    messages.info(request, 'User registration successfull.')
+                    messages.success(request, 'User registration successfull.')
                     return redirect('login')
             else:
-                messages.info(request, 'Password did not matched!')
+                messages.error(request, 'Password did not matched!')
         return render(request, 'auth/register-v2.html',{'form': form})
     return render(request, 'auth/register-v2.html')
 
@@ -109,4 +110,5 @@ def recover_password(request):
 # sign out
 def sign_out(request):
     auth.logout(request)
+    messages.success(request,'User logged out!')
     return redirect('login')

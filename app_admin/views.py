@@ -11,8 +11,8 @@ def profile(request):
         userscreens = request.session['userscreens']
         modules = request.session['modules']
         role = request.user.user_role_id.id
-        print(role)
         return render(request, 'adminlte/profile.html', {'modules': modules, 'userscreens': userscreens, 'role': role})
+    messages.error(request,'Please sign in first!')
     return redirect('login')
 
 # product
@@ -34,13 +34,15 @@ def product(request):
             price = request.POST['price']
 
             if Product.objects.filter(name=name).exists():
-                messages.info(request, 'This product is already added.')
+                messages.error(request, 'This product is already added.')
             else:
                 product = Product(name=name, category_id=category, manufacturer_id=manufacturer, unit=unit, price=price)
                 product.save()
+                messages.success(request, 'Product added!')
             return redirect('products')
 
         return render(request, 'adminlte/product.html', {'modules': modules,'products': products, 'categories': categories, 'manufacturers': manufacturers, 'userscreens': userscreens, 'sideScreen': 'All Products', 'sideSub': 'Product', 'sideModule': 'Products', 'role': role})
+    messages.error(request,'Please sign in first!')
     return redirect('login')
 
 
@@ -56,7 +58,9 @@ def edit_product(request):
             product.unit = request.POST['unit']
             product.price = request.POST['price']
             product.save()
+            messages.success(request,'Product updated!')
         return redirect('products')
+    messages.error(request,'Please sign in first!')
     return redirect('login')
 
 
@@ -67,6 +71,7 @@ def delete_product(request):
             id = request.POST['id']
             product = Product.objects.get(id=id) 
             product.delete()
+            messages.success(request, 'Product deleted!')
         return redirect('products')
     return redirect('login')
 
@@ -83,10 +88,11 @@ def category(request):
         if request.method == 'POST':
             name = request.POST['name']
             if Category.objects.filter(name=name).exists():
-                messages.info(request, 'This category is already added!')
+                messages.error(request, 'This category is already added!')
             else:
                 category = Category(name=name)
                 category.save()
+                messages.success(request, 'Category added!')
             return redirect('categories')
         return render(request, 'adminlte/category.html',{'categories': categories, 'modules':modules, 'userscreens':userscreens , 'sideScreen': 'Category', 'role': role})
     return redirect('login')
@@ -99,7 +105,7 @@ def edit_category(request):
         category = Category.objects.get(id=id)
         category.name = request.POST['name']
         category.save()
-        messages.info(request, 'Category updated!')
+        messages.success(request, 'Category updated!')
         return redirect('categories')
     return redirect('login')
 
@@ -110,6 +116,7 @@ def delete_category(request):
         id = request.POST['id']
         category = Category.objects.get(id=id)
         category.delete()
+        messages.success(request, 'Category deleted!')
         return redirect('categories')
     return redirect('login')
 
@@ -126,12 +133,14 @@ def manufacturer(request):
         if request.method == 'POST':
             name = request.POST['name']
             if Manufacturer.objects.filter(name=name).exists():
-                messages.info(request, 'Manufacturer already exists!')
+                messages.error(request, 'Manufacturer already exists!')
             else:
                 manufacturer = Manufacturer(name=name)
                 manufacturer.save()
+                messages.success(request, 'Manufacturer added!')
             return redirect('manufacturers')
         return render(request, 'adminlte/manufacturer.html',{'manufacturers': manufacturers, 'modules':modules, 'userscreens':userscreens, 'sideScreen': 'All Manufacturers', 'sideSub': 'Manufacturer', 'sideModule': 'Products', 'role': role})
+    messages.error(request,'Please sign in first!')
     return redirect('login')
 
 
@@ -143,6 +152,7 @@ def edit_manufacturer(request):
             manufacturer = Manufacturer.objects.get(id=id)
             manufacturer.name = request.POST['name']
             manufacturer.save()
+            messages.success(request, 'Manufacturer updated!')
         return redirect('manufacturers')
     return redirect('login')
 
@@ -154,5 +164,6 @@ def delete_manufacturer(request):
             id = request.POST['id']
             manufacturer = Manufacturer.objects.get(id=id)
             manufacturer.delete()
+            messages.success(request, 'Manufacturer deleted!')
         return redirect('manufacturers')
     return redirect('login')
