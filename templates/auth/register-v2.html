@@ -8,9 +8,20 @@
       <a href="#" class="h1"><b>Admin</b>LTE</a>
     </div>
     <div class="card-body">
+      {% for message in messages %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{message}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% endfor %}
       <p class="login-box-msg">Register a new membership</p>
 
       <form action="#" method="post">{% csrf_token %}
+        {% for err in form.username.errors %}
+          <small class="text-danger">{{err}}</small>
+        {% endfor %}
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Username" name="username" id="username">
           <div class="input-group-append">
@@ -19,6 +30,9 @@
             </div>
           </div>
         </div>
+        {% for err in form.email.errors %}
+          <small class="text-danger">{{err}}</small>
+        {% endfor %}
         <div class="input-group mb-3">
           <input type="email" class="form-control" placeholder="Email" name="email" id="email">
           <div class="input-group-append">
@@ -27,6 +41,9 @@
             </div>
           </div>
         </div>
+        {% for err in form.password1.errors %}
+          <small class="text-danger">{{err}}</small>
+        {% endfor %}
         <div class="input-group mb-3">
           <input type="password" class="form-control" placeholder="Password" name="password1" id="password1">
           <div class="input-group-append">
@@ -35,6 +52,9 @@
             </div>
           </div>
         </div>
+        {% for err in form.password2.errors %}
+          <small class="text-danger">{{err}}</small>
+        {% endfor %}
         <div class="input-group mb-3">
           <input type="password" class="form-control" placeholder="Retype password" name="password2" id="password2">
           <div class="input-group-append">

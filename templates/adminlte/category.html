@@ -2,6 +2,14 @@
 {% block content %}
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+    {% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>{{message}}</strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endfor %}
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -157,7 +165,9 @@
                         <td>{{category.id}}</td>
                         <td>{{category.name}}</td>
                         <td>
+                          {% if role == 1 or role == 2 %}
                           <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit-category-{{category.id}}"> <i class="fa fa-pen"></i> </a>
+                          {% endif %}
                           {% if role == 1 %}
                           <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-category-{{category.id}}"><i class="fa fa-trash"></i></a>
                           {% endif %}

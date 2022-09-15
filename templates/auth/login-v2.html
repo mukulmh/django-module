@@ -9,12 +9,22 @@
       <a href="#" class="h1"><b>Admin</b>LTE</a>
     </div>
     <div class="card-body">
-
+      {% for message in messages %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{message}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% endfor %}
       <p class="login-box-msg">Sign in to start your session <br>
       </p>
 
 
       <form action="#" method="post"> {% csrf_token %}
+          {% for err in form.email.errors %}
+            <small class="text-danger">{{err}}</small>
+          {% endfor %}
         <div class="input-group mb-3">
           <input type="email" class="form-control" placeholder="Email" name="email" id="email">
           <div class="input-group-append">
@@ -23,6 +33,9 @@
             </div>
           </div>
         </div>
+        {% for err in form.password.errors %}
+          <small class="text-danger">{{err}}</small>
+        {% endfor %}
         <div class="input-group mb-3">
           <input type="password" class="form-control" placeholder="Password" name="password" id="password">
           <div class="input-group-append">
@@ -59,7 +72,7 @@
       <!-- /.social-auth-links -->
 
       <p class="mb-1">
-        <a href="forgot-password-v2.html">I forgot my password</a>
+        <a href="{% url 'forgot-password' %}">I forgot my password</a>
       </p>
       <p class="mb-0">
         <a href="{% url 'register' %}" class="text-center">Register a new membership</a>

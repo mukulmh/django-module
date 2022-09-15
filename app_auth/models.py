@@ -43,7 +43,7 @@ class Account(AbstractBaseUser):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
-    user_role_id = models.ForeignKey(UserRole, on_delete=models.CASCADE, default=None, null=True)
+    user_role_id = models.ForeignKey(UserRole, on_delete=models.CASCADE, default=3, null=True)
 
 
     USERNAME_FIELD = 'email'
