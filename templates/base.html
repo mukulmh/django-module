@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="{% static 'plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css' %}">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="{% static 'plugins/toastr/toastr.min.css' %}">
     <!-- Alertify CSS -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
     <!-- Alertfy Default theme -->
@@ -35,14 +39,42 @@
     <script src="{% static 'dist/js/adminlte.min.js' %}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{% static 'dist/js/demo.js' %}"></script>
+    <!-- SweetAlert2 -->
+    <script src="{% static 'plugins/sweetalert2/sweetalert2.min.js' %}"></script>
+    <!-- Toastr -->
+    <script src="{% static 'plugins/toastr/toastr.min.js' %}"></script>
     <!-- Alertify JavaScript -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    
+    {% for message in messages %}
     <script>
-        {% for message in messages %}
-          alertify.set('notifier','position', 'bottom-right');
-          alertify.{{message.tags}}('{{message}}');
-        {% endfor %}
+        //   alertify.set('notifier','position', 'bottom-right');
+        //   alertify.{{message.tags}}('{{message}}');
+
+        // $(document).Toasts('create', {
+        //   class: 'bg-{{ message.tags }}',
+        //   autohide: true,
+        //   delay: 2000,
+        //   body: '{{message}}',
+        // });
+
+        // toastr.{{message.tags}}('{{message}}')
+
+        $(function () {
+        var Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000
+            });
+
+            Toast.fire({
+            icon: '{{ message.tags }}',
+            title: '{{message}}'
+            })
+        });
     </script>
+    {% endfor %}
 </body>
 
 </html>
