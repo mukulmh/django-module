@@ -44,6 +44,7 @@ class Account(AbstractBaseUser):
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     user_role_id = models.ForeignKey(UserRole, on_delete=models.CASCADE, default=3, null=True)
+    image = models.ImageField(upload_to='profile', null=True, default= 'profile/avatar.png')
 
 
     USERNAME_FIELD = 'email'

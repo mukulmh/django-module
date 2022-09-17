@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app_auth',
     'app_admin',
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [

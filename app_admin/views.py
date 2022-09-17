@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.core.files.storage import FileSystemStorage
 
 from .models import *
 
@@ -8,16 +9,29 @@ from .models import *
 # profile
 def profile(request):
     if request.user.is_authenticated:
+        user = request.user
         if request.method == 'POST':
-            name = request.POST['name']
-            username = request.POST['username']
-            email = request.POST['email']
-            user = request.user
-            user.name = name
-            user.username = username
-            user.email = email
-            user.save()
-            messages.success(request, 'User info updated!')
+            if request.FILES.get('image', False):
+                name = request.POST['name']
+                username = request.POST['username']
+                email = request.POST['email']
+                file = request.FILES['image']
+                fs = FileSystemStorage()
+                user.name = name
+                user.username = username
+                user.email = email
+                user.image = fs.save(file.name, file)
+                user.save()
+                messages.success(request, 'User info updated!')
+            else:
+                name = request.POST['name']
+                username = request.POST['username']
+                email = request.POST['email']
+                user.name = name
+                user.username = username
+                user.email = email
+                user.save()
+                messages.success(request, 'User info updated!')
         userscreens = request.session['userscreens']
         modules = request.session['modules']
         role = request.user.user_role_id.id
