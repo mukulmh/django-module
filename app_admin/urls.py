@@ -13,4 +13,5 @@ urlpatterns =[
     path('manufacturers/', manufacturer, name='manufacturers'),
     path('delete-manufacturer/', delete_manufacturer, name='delete-manufacturer'),
     path('edit-manufacturer/', edit_manufacturer, name='edit-manufacturer'),
+    path('users/', users, name='users'),
 ]

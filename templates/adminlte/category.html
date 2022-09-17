@@ -1,4 +1,5 @@
 {% extends 'adminlte/base.html' %}
+<p>{% block title %}Category{% endblock %}</p>
 {% block content %}
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -64,9 +65,11 @@
   
                   <div class="card-tools">
                     <div class="input-group input-group-sm" style="width: 200px;">
+                      {% if user.user_role_id_id == 1 or user.user_role_id_id == 2 %}
                       <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add-category">
-                        <i class="fa fa-plus"></i>
+                      <i class="fa fa-plus"></i>
                       </button>&nbsp;
+                      {% endif %}
                       <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
   
                       <div class="input-group-append">
@@ -157,10 +160,10 @@
                         <td>{{category.id}}</td>
                         <td>{{category.name}}</td>
                         <td>
-                          {% if role == 1 or role == 2 %}
+                          {% if user.user_role_id_id == 1 or user.user_role_id_id == 2 %}
                           <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit-category-{{category.id}}"> <i class="fa fa-pen"></i> </a>
                           {% endif %}
-                          {% if role == 1 %}
+                          {% if user.user_role_id_id == 1 %}
                           <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-category-{{category.id}}"><i class="fa fa-trash"></i></a>
                           {% endif %}
                         </td>

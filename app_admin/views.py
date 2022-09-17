@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.files.storage import FileSystemStorage
 
+from app_auth.models import Account
+
 from .models import *
 
 # Create your views here.
@@ -33,9 +35,10 @@ def profile(request):
                 user.save()
                 messages.success(request, 'User info updated!')
         userscreens = request.session['userscreens']
+        usersubmodules = request.session['usersubmodules']
+        usermodules = request.session['usermodules']
         modules = request.session['modules']
-        role = request.user.user_role_id.id
-        return render(request, 'adminlte/profile.html', {'modules': modules, 'userscreens': userscreens, 'role': role})
+        return render(request, 'adminlte/profile.html', {'modules': modules, 'usermodules': usermodules, 'usersubmodules': usersubmodules, 'userscreens': userscreens})
     messages.error(request,'Please sign in first!')
     return redirect('login')
 
@@ -43,12 +46,12 @@ def profile(request):
 def product(request):
     if request.user.is_authenticated:
         userscreens = request.session['userscreens']
+        usersubmodules = request.session['usersubmodules']
+        usermodules = request.session['usermodules']
         modules = request.session['modules']
         products = Product.objects.all()
         categories = Category.objects.all()
         manufacturers = Manufacturer.objects.all()
-        
-        role = request.user.user_role_id.id
 
         if request.method == 'POST':
             name = request.POST['name']
@@ -65,7 +68,7 @@ def product(request):
                 messages.success(request, 'Product added!')
             return redirect('products')
 
-        return render(request, 'adminlte/product.html', {'modules': modules,'products': products, 'categories': categories, 'manufacturers': manufacturers, 'userscreens': userscreens, 'sideScreen': 'All Products', 'sideSub': 'Product', 'sideModule': 'Products', 'role': role})
+        return render(request, 'adminlte/product.html', {'modules': modules, 'usermodules': usermodules, 'products': products, 'categories': categories, 'manufacturers': manufacturers, 'usersubmodules': usersubmodules, 'userscreens': userscreens, 'sideScreen': 'All Products', 'sideSub': 'Product', 'sideModule': 'Products'})
     messages.error(request,'Please sign in first!')
     return redirect('login')
 
@@ -104,10 +107,10 @@ def delete_product(request):
 def category(request):
     if request.user.is_authenticated:
         userscreens = request.session['userscreens']
+        usersubmodules = request.session['usersubmodules']
+        usermodules = request.session['usermodules']
         modules = request.session['modules']
         categories = Category.objects.all()
-        
-        role = request.user.user_role_id.id
 
         if request.method == 'POST':
             name = request.POST['name']
@@ -118,7 +121,7 @@ def category(request):
                 category.save()
                 messages.success(request, 'Category added!')
             return redirect('categories')
-        return render(request, 'adminlte/category.html',{'categories': categories, 'modules':modules, 'userscreens':userscreens , 'sideScreen': 'Category', 'role': role})
+        return render(request, 'adminlte/category.html',{'categories': categories, 'modules':modules, 'usermodules': usermodules, 'usersubmodules': usersubmodules, 'userscreens':userscreens , 'sideScreen': 'Category'})
     return redirect('login')
 
 
@@ -149,10 +152,10 @@ def delete_category(request):
 def manufacturer(request):
     if request.user.is_authenticated:
         userscreens = request.session['userscreens']
+        usersubmodules = request.session['usersubmodules']
+        usermodules = request.session['usermodules']
         modules = request.session['modules']
         manufacturers = Manufacturer.objects.all()
-
-        role = request.user.user_role_id.id
 
         if request.method == 'POST':
             name = request.POST['name']
@@ -163,7 +166,7 @@ def manufacturer(request):
                 manufacturer.save()
                 messages.success(request, 'Manufacturer added!')
             return redirect('manufacturers')
-        return render(request, 'adminlte/manufacturer.html',{'manufacturers': manufacturers, 'modules':modules, 'userscreens':userscreens, 'sideScreen': 'All Manufacturers', 'sideSub': 'Manufacturer', 'sideModule': 'Products', 'role': role})
+        return render(request, 'adminlte/manufacturer.html',{'manufacturers': manufacturers, 'modules':modules, 'usermodules': usermodules, 'usersubmodules': usersubmodules, 'userscreens':userscreens, 'sideScreen': 'All Manufacturers', 'sideSub': 'Manufacturer', 'sideModule': 'Products'})
     messages.error(request,'Please sign in first!')
     return redirect('login')
 
@@ -190,4 +193,17 @@ def delete_manufacturer(request):
             manufacturer.delete()
             messages.success(request, 'Manufacturer deleted!')
         return redirect('manufacturers')
+    return redirect('login')
+
+
+# users
+def users(request):
+    if request.user.is_authenticated and request.user.user_role_id_id == 1:
+        users = Account.objects.all()
+        userscreens = request.session['userscreens']
+        usersubmodules = request.session['usersubmodules']
+        usermodules = request.session['usermodules']
+        modules = request.session['modules']
+        return render(request,'adminlte/users.html',{'users': users, 'modules':modules, 'usermodules': usermodules, 'usersubmodules': usersubmodules, 'userscreens':userscreens, 'sideScreen': 'Users'})
+    messages.error(request,'Please sign in as Admin!')
     return redirect('login')

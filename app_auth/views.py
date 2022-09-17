@@ -22,10 +22,16 @@ def login(request):
             if user is not None:
                 userrole = Account.objects.get(email=email)
                 rolewiseScreen = Rolewise_screen.objects.filter(role_id = userrole.user_role_id)
+                modulesID = []
+                subModulesID = []
                 screensID = []
                 for screen in rolewiseScreen:
+                    modulesID.append(screen.screen_id.sub_module_id.module_id_id)
+                    subModulesID.append(screen.screen_id.sub_module_id_id)
                     screensID.append(screen.screen_id_id)
                 request.session['userscreens'] = screensID
+                request.session['usersubmodules'] = subModulesID
+                request.session['usermodules'] = modulesID
 
                 moduleData = []
 

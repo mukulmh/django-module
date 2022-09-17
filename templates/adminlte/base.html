@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | User Profile</title>
+  <title>AdminLTE 3 | {% block title %}{% endblock %}</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -148,6 +148,7 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             {% for module in modules %}
+            {% if module.module_id in usermodules %}
             <li class="nav-item {% if module.module_name == sideModule %}menu-open{% endif %}">
               <a class="nav-link {% if module.module_name == sideModule %}active{% endif %}" href="#">
                 <i class="nav-icon fas {{module.icon}}"></i>
@@ -157,31 +158,35 @@
                 </p>
               </a>
               {% for sub_module in module.sub_modules %}
-              <ul class="nav nav-treeview">
-                <li class="nav-item {% if sideSub == sub_module.sub_module_name %}menu-open{% endif %}">
-                  <a class="nav-link" href="#">
-                    <i class="far {{sub_module.icon}} nav-icon"></i>
-                    <p>{{sub_module.sub_module_name}}</p>
-                    <i class="right fas fa-angle-left"></i>
-                  </a>
-                  {% for screen in sub_module.screens %}
-                  {% if screen.screen_id in userscreens %}
-                  <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                      <a href="{{screen.screen_url}}"
-                        class="nav-link {% if screen.screen_name == sideScreen %}active{% endif %}">
-                        <i class="fas {{screen.icon}} nav-icon"></i>
-                        <p>{{screen.screen_name}}</p>
-                      </a>
-                    </li>
-                  </ul>
-                  {% endif %}
-                  {% endfor %}
-                </li>
-              </ul>
+              {% if sub_module.sub_module_id in usersubmodules %}
+                <ul class="nav nav-treeview">
+                  <li class="nav-item {% if sideSub == sub_module.sub_module_name %}menu-open{% endif %}">
+                    <a class="nav-link" href="#">
+                      <i class="far {{sub_module.icon}} nav-icon"></i>
+                      <p>{{sub_module.sub_module_name}}</p>
+                      <i class="right fas fa-angle-left"></i>
+                    </a>
+                    {% for screen in sub_module.screens %}
+                    {% if screen.screen_id in userscreens %}
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="{{screen.screen_url}}"
+                          class="nav-link {% if screen.screen_name == sideScreen %}active{% endif %}">
+                          <i class="fas {{screen.icon}} nav-icon"></i>
+                          <p>{{screen.screen_name}}</p>
+                        </a>
+                      </li>
+                    </ul>
+                    {% endif %}
+                    {% endfor %}
+                  </li>
+                </ul>
+              {% endif %}
               {% endfor %}
             </li>
+            {% endif %}
             {% endfor %}
+            {% if user.user_role_id_id == 1 or user.user_role_id_id == 2 %}
             <li class="nav-item">
               <a href="{% url 'categories' %}" class="nav-link {% if sideScreen == 'Category' %}active{% endif %} ">
                 <i class="nav-icon fas fa-list"></i>
@@ -190,6 +195,17 @@
                 </p>
               </a>
             </li>
+            {% endif %}
+            {% if user.user_role_id_id == 1 %}
+            <li class="nav-item">
+              <a href="{% url 'users' %}" class="nav-link {% if sideScreen == 'Users' %}active{% endif %} ">
+                <i class="nav-icon fas fa-user"></i>
+                <p>
+                  Users
+                </p>
+              </a>
+            </li>
+            {% endif %}
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

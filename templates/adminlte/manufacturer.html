@@ -1,4 +1,5 @@
 {% extends 'adminlte/base.html' %}
+<p>{% block title %}Manufacturers{% endblock %}</p>
 {% block content %}
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -64,9 +65,11 @@
   
                   <div class="card-tools">
                     <div class="input-group input-group-sm" style="width: 200px;">
-                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add-manufacturer">
+                      {% if user.user_role_id_id == 1 or user.user_role_id_id == 2 %}
+                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add-manufacturer">
                       <i class="fa fa-plus"></i>
-                    </button>&nbsp;
+                      </button>&nbsp;
+                      {% endif %}
                       <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
   
                       <div class="input-group-append">
@@ -157,8 +160,10 @@
                         <td>{{manufacturer.id}}</td>
                         <td>{{manufacturer.name}}</td>
                         <td>
+                          {% if user.user_role_id_id == 1 or user.user_role_id_id == 2 %}
                           <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit-manufacturer-{{manufacturer.id}}"> <i class="fa fa-pen"></i> </a>
-                          {% if role == 1 %}
+                          {% endif %}
+                          {% if user.user_role_id_id == 1 %}
                           <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-manufacturer-{{manufacturer.id}}"><i class="fa fa-trash"></i></a>
                           {% endif %}
                         </td>
