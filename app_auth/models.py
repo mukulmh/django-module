@@ -22,7 +22,7 @@ class MyAccoutManager(BaseUserManager):
         user = self.create_user(
             email = email,
             username = username,
-            password = password,
+            password = password
         )
 
         user.is_admin = True

@@ -116,5 +116,5 @@ def recover_password(request):
 # sign out
 def sign_out(request):
     auth.logout(request)
-    messages.success(request,'User logged out!')
+    messages.info(request,'User logged out!')
     return redirect('login')

@@ -152,8 +152,7 @@
             <li class="nav-item {% if module.module_name == sideModule %}menu-open{% endif %}">
               <a class="nav-link {% if module.module_name == sideModule %}active{% endif %}" href="#">
                 <i class="nav-icon fas {{module.icon}}"></i>
-                <p>
-                  {{module.module_name}}
+                <p>{{module.module_name}}
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
@@ -162,9 +161,10 @@
                 <ul class="nav nav-treeview">
                   <li class="nav-item {% if sideSub == sub_module.sub_module_name %}menu-open{% endif %}">
                     <a class="nav-link" href="#">
-                      <i class="far {{sub_module.icon}} nav-icon"></i>
-                      <p>{{sub_module.sub_module_name}}</p>
-                      <i class="right fas fa-angle-left"></i>
+                      <i class="nav-icon far {{sub_module.icon}}"></i>
+                      <p>{{sub_module.sub_module_name}}
+                        <i class="right fas fa-angle-left"></i>
+                      </p>
                     </a>
                     {% for screen in sub_module.screens %}
                     {% if screen.screen_id in userscreens %}
@@ -172,7 +172,7 @@
                       <li class="nav-item">
                         <a href="{{screen.screen_url}}"
                           class="nav-link {% if screen.screen_name == sideScreen %}active{% endif %}">
-                          <i class="fas {{screen.icon}} nav-icon"></i>
+                          <i class="nav-icon fas {{screen.icon}}"></i>
                           <p>{{screen.screen_name}}</p>
                         </a>
                       </li>

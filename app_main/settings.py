@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-k448+8+av4=x^%1a+&^06jg_^pao&$s@*&v)3@#jr5$vx&#g7v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -80,6 +80,19 @@ AUTH_USER_MODEL = 'app_auth.Account'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# remote mysql db
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'isZ3R6wdjc',
+#        'USER': 'isZ3R6wdjc',
+#        'PASSWORD': 'VFs1MJi2Sr',
+#        'HOST': 'remotemysql.com',
+#       'PORT': 3306
+#    }
+#}
+
+# local sqlite db
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -137,7 +150,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'message',
-    messages.INFO: 'message',
+    messages.INFO: 'info',
     messages.SUCCESS: 'success',
     messages.WARNING: 'warning',
     messages.ERROR: 'error',

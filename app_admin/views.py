@@ -17,6 +17,14 @@ def profile(request):
                 name = request.POST['name']
                 username = request.POST['username']
                 email = request.POST['email']
+
+                if user.username != username and Account.objects.filter(username=username).exists():
+                    messages.error(request, 'Username already taken!')
+                    return redirect('profile')
+                if user.email != email and Account.objects.filter(email=email).exists():
+                    messages.error(request,'Email already taken!')
+                    return redirect('profile')
+
                 file = request.FILES['image']
                 fs = FileSystemStorage()
                 user.name = name
@@ -29,6 +37,12 @@ def profile(request):
                 name = request.POST['name']
                 username = request.POST['username']
                 email = request.POST['email']
+                if user.username != username and Account.objects.filter(username=username).exists():
+                    messages.error(request, 'Username already taken!')
+                    return redirect('profile')
+                if user.email != email and Account.objects.filter(email=email).exists():
+                    messages.error(request,'Email already taken!')
+                    return redirect('profile')
                 user.name = name
                 user.username = username
                 user.email = email
@@ -41,6 +55,7 @@ def profile(request):
         return render(request, 'adminlte/profile.html', {'modules': modules, 'usermodules': usermodules, 'usersubmodules': usersubmodules, 'userscreens': userscreens})
     messages.error(request,'Please sign in first!')
     return redirect('login')
+
 
 # product
 def product(request):
@@ -79,11 +94,15 @@ def edit_product(request):
         if request.method == 'POST':
             id = request.POST['id']
             product = Product.objects.get(id=id)
-            product.name = request.POST['name']
+            name = request.POST['name']
             product.category_id = request.POST['category']
             product.manufacturer_id = request.POST['manufacturer']
             product.unit = request.POST['unit']
             product.price = request.POST['price']
+            if product.name != name and Product.objects.filter(name=name).exists():
+                messages.error(request, 'This product is already added.')
+                return redirect('products')
+            product.name = name
             product.save()
             messages.success(request,'Product updated!')
         return redirect('products')
@@ -130,7 +149,11 @@ def edit_category(request):
     if request.user.is_authenticated:
         id = request.POST['id']
         category = Category.objects.get(id=id)
-        category.name = request.POST['name']
+        name = request.POST['name']
+        if category.name != name and Category.objects.filter(name = name).exists():
+            messages.error(request, 'This category is already added!')
+            return redirect('categories')
+        category.name = name
         category.save()
         messages.success(request, 'Category updated!')
         return redirect('categories')
@@ -177,7 +200,11 @@ def edit_manufacturer(request):
         if request.method == 'POST':
             id = request.POST['id']
             manufacturer = Manufacturer.objects.get(id=id)
-            manufacturer.name = request.POST['name']
+            name = request.POST['name']
+            if manufacturer.name != name and Manufacturer.objects.filter(name=name).exists():
+                messages.error(request,'Manufacturer already exists!')
+                return redirect('manufacturers')
+            manufacturer.name = name
             manufacturer.save()
             messages.success(request, 'Manufacturer updated!')
         return redirect('manufacturers')
