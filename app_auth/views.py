@@ -2,11 +2,15 @@ from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import auth, messages
 from django.core import serializers
 from django.http import JsonResponse
+import logging
 
 from .forms import LoginForm, RegistrationForm
 
 from .models import Account
 from app_admin.models import *
+
+
+logger = logging.getLogger(__name__)
 
 # Create your views here.
 
@@ -68,12 +72,14 @@ def login(request):
                     moduleData.append(moduleJson)
 
                 request.session['modules'] = moduleData
-
-                auth.login(request,user) 
+            
+                auth.login(request,user)
+                logger.info('User logged in.')
                 # return JsonResponse(moduleData, safe=False) 
                 messages.success(request, 'Login success!')
                 return redirect('profile')
             else:
+                logger.error('Invalid credentials.')
                 messages.error(request, 'Invalid email or password!')
         return render(request, 'auth/login-v2.html', {'form': form})
     return render(request, 'auth/login-v2.html')
@@ -116,5 +122,6 @@ def recover_password(request):
 # sign out
 def sign_out(request):
     auth.logout(request)
+    logger.warning('User logged out.')
     messages.info(request,'User logged out!')
     return redirect('login')

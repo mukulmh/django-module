@@ -1,0 +1,77 @@
+ERROR 2022-09-23 10:55:55,632  Invalid credentials.
+INFO 2022-09-23 10:59:25,694  User logged in.
+INFO 2022-09-23 11:06:02,549 Watching for file changes with StatReloader
+WARNING 2022-09-23 11:21:09,945 User logged out.
+INFO 2022-09-23 11:21:24,011 User logged in.
+INFO 2022-09-23 11:31:14,640 Watching for file changes with StatReloader
+WARNING 2022-09-23 11:38:38,052 Not Found: /favicon.ico
+INFO 2022-09-23 21:37:32,059 Watching for file changes with StatReloader
+WARNING 2022-09-23 21:39:12,990 Not Found: /favicon.ico
+INFO 2022-09-23 21:52:37,755 Watching for file changes with StatReloader
+WARNING 2022-09-23 21:54:05,652 Not Found: /favicon.ico
+WARNING 2022-09-23 21:54:05,953 Not Found: /favicon.ico
+INFO 2022-09-23 21:54:35,635 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 21:54:37,449 Watching for file changes with StatReloader
+INFO 2022-09-23 21:57:08,583 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 21:57:10,138 Watching for file changes with StatReloader
+INFO 2022-09-23 21:57:27,944 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 21:57:29,452 Watching for file changes with StatReloader
+INFO 2022-09-23 21:57:36,421 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 21:57:38,153 Watching for file changes with StatReloader
+INFO 2022-09-23 21:58:12,719 Watching for file changes with StatReloader
+INFO 2022-09-23 21:58:26,043 Watching for file changes with StatReloader
+INFO 2022-09-23 21:58:42,578 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 21:58:44,546 Watching for file changes with StatReloader
+INFO 2022-09-23 21:59:08,035 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 21:59:09,697 Watching for file changes with StatReloader
+INFO 2022-09-23 21:59:13,605 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 21:59:15,947 Watching for file changes with StatReloader
+INFO 2022-09-23 21:59:17,625 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 21:59:19,145 Watching for file changes with StatReloader
+INFO 2022-09-23 22:20:16,925 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 22:20:18,993 Watching for file changes with StatReloader
+INFO 2022-09-23 22:20:33,352 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 22:20:35,550 Watching for file changes with StatReloader
+INFO 2022-09-23 22:20:37,291 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 22:20:39,070 Watching for file changes with StatReloader
+INFO 2022-09-23 22:20:41,915 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 22:20:43,375 Watching for file changes with StatReloaderINFO 2022-09-23 22:33:13,598 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 22:33:15,315 Watching for file changes with StatReloader
+INFO 2022-09-23 22:33:27,951 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 22:33:29,540 Watching for file changes with StatReloader
+INFO 2022-09-23 22:36:16,428 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 22:36:18,399 Watching for file changes with StatReloader
+INFO 2022-09-23 22:36:19,888 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 22:36:21,415 Watching for file changes with StatReloader
+INFO 2022-09-23 22:36:38,225 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 22:36:39,981 Watching for file changes with StatReloader
+INFO 2022-09-23 22:38:07,114 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 22:38:08,801 Watching for file changes with StatReloader
+INFO 2022-09-23 23:06:30,552 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 23:06:32,128 Watching for file changes with StatReloader
+INFO 2022-09-23 23:07:15,240 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 23:07:16,814 Watching for file changes with StatReloader
+INFO 2022-09-23 23:07:20,919 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 23:07:22,527 Watching for file changes with StatReloader
+INFO 2022-09-23 23:26:23,613 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 23:26:25,322 Watching for file changes with StatReloader
+INFO 2022-09-23 23:28:35,545 Watching for file changes with StatReloader
+INFO 2022-09-23 23:30:17,226 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 23:30:18,799 Watching for file changes with StatReloader
+INFO 2022-09-23 23:30:21,540 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 23:30:23,431 Watching for file changes with StatReloader
+INFO 2022-09-23 23:30:37,825 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 23:30:39,336 Watching for file changes with StatReloader
+INFO 2022-09-23 23:31:05,912 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 23:31:07,376 Watching for file changes with StatReloader
+INFO 2022-09-23 23:32:03,996 Watching for file changes with StatReloader
+INFO 2022-09-23 23:36:43,375 Watching for file changes with StatReloader
+WARNING 2022-09-23 23:41:14,172 User logged out.
+ERROR 2022-09-23 23:41:23,739 Invalid credentials.
+INFO 2022-09-23 23:41:27,872 User logged in.
+INFO 2022-09-23 23:52:12,078 Watching for file changes with StatReloader
+INFO 2022-09-23 23:52:45,003 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 23:52:46,545 Watching for file changes with StatReloader
+INFO 2022-09-23 23:52:50,299 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-23 23:52:52,086 Watching for file changes with StatReloader
+INFO 2022-09-24 00:00:25,464 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.

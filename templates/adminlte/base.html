@@ -13,12 +13,16 @@
     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- SweetAlert2 -->
   <link rel="stylesheet" href="{% static 'plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css' %}">
   <!-- Toastr -->
   <link rel="stylesheet" href="{% static 'plugins/toastr/toastr.min.css' %}">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{% static 'plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{% static 'plugins/daterangepicker/daterangepicker.css' %}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
   <!-- Alertify CSS -->
@@ -205,6 +209,14 @@
                 </p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="{% url 'logs' %}" class="nav-link {% if sideScreen == 'Logs' %}active{% endif %} ">
+                <i class="nav-icon fas fa-list"></i>
+                <p>
+                  Logs
+                </p>
+              </a>
+            </li>
             {% endif %}
           </ul>
         </nav>
@@ -244,6 +256,11 @@
   <script src="{% static 'plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
   <!-- bs-custom-file-input -->
   <script src="{% static 'plugins/bs-custom-file-input/bs-custom-file-input.js' %}"></script>
+  <!-- daterangepicker -->
+  <script src="{% static 'plugins/moment/moment.min.js' %}"></script>
+  <script src="{% static 'plugins/daterangepicker/daterangepicker.js' %}"></script>
+  <!-- ChartJS -->
+  <script src="{% static 'plugins/chart.js/Chart.min.js' %}"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="{% static 'dist/js/demo.js' %}"></script>
   <!-- Alertify JavaScript -->

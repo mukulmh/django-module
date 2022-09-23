@@ -1,0 +1,12 @@
+ERROR 2022-09-23 10:55:55,632  Invalid credentials.
+INFO 2022-09-23 10:59:25,694  User logged in.
+INFO 2022-09-23 11:06:02,549 Watching for file changes with StatReloader
+WARNING 2022-09-23 11:21:09,945 User logged out.
+INFO 2022-09-23 11:21:24,011 User logged in.
+INFO 2022-09-23 11:31:14,640 Watching for file changes with StatReloader
+WARNING 2022-09-23 11:38:38,052 Not Found: /favicon.ico
+INFO 2022-09-23 21:37:32,059 Watching for file changes with StatReloader
+WARNING 2022-09-23 21:39:12,990 Not Found: /favicon.ico
+INFO 2022-09-23 21:52:37,755 Watching for file changes with StatReloader
+WARNING 2022-09-23 21:54:05,652 Not Found: /favicon.ico
+WARNING 2022-09-23 21:54:05,953 Not Found: /favicon.ico
