@@ -79,8 +79,8 @@ def login(request):
                 messages.success(request, 'Login success!')
                 return redirect('profile')
             else:
-                logger.error('Invalid credentials.')
                 messages.error(request, 'Invalid email or password!')
+        logger.debug('Invalid form request.')
         return render(request, 'auth/login-v2.html', {'form': form})
     return render(request, 'auth/login-v2.html')
 

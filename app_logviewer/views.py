@@ -1,6 +1,9 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
 import os
+import logging
+
+logger = logging.getLogger(__name__)
 
 files = os.listdir('logs')
 files=[x.split('.')[0] for x in files]
@@ -25,22 +28,29 @@ def logs(request):
                 info_logs = []
                 warning_logs = []
                 error_logs = []
+                type = ['DEBUG','INFO','ERROR','WARNING']
                 for line in fp:
                     if line.strip():
-                        all_count += 1
-                        all_logs.append(line)
-                    if line.find('DEBUG') != -1:
-                        debug_count += 1
-                        debug_logs.append(line)
-                    if line.find('INFO') != -1:
-                        info_count += 1
-                        info_logs.append(line)
-                    if line.find('ERROR') != -1:
-                        error_count += 1
-                        error_logs.append(line)
-                    if line.find('WARNING') != -1:
-                        warning_count += 1
-                        warning_logs.append(line)
+                        if line.find('DEBUG') != -1:
+                            debug_count += 1
+                            debug_logs.append(line)
+                            all_count += 1
+                            all_logs.append(line)
+                        if line.find('INFO') != -1:
+                            info_count += 1
+                            info_logs.append(line)
+                            all_count += 1
+                            all_logs.append(line)
+                        if line.find('ERROR') != -1:
+                            error_count += 1
+                            error_logs.append(line)
+                            all_count += 1
+                            all_logs.append(line)
+                        if line.find('WARNING') != -1:
+                            warning_count += 1
+                            warning_logs.append(line)
+                            all_count += 1
+                            all_logs.append(line)
 
             log_data['date'] = file
             log_data['all_count'] = all_count
@@ -67,4 +77,5 @@ def logs(request):
         modules = request.session['modules']
         return render(request,'adminlte/logs.html',{'modules':modules, 'usermodules': usermodules, 'usersubmodules': usersubmodules, 'userscreens':userscreens, 'sideScreen': 'Logs', 'logs':logs, 'todays_log':todays_log})
     messages.error(request,'Please sign in as Admin!')
+    logger.debug('Unauthorized access blocked.')
     return redirect('login')

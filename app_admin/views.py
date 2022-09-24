@@ -5,6 +5,9 @@ from django.core.files.storage import FileSystemStorage
 from app_auth.models import Account
 
 from .models import *
+import logging
+
+logger = logging.getLogger(__name__)
 
 # Create your views here.
 
@@ -54,6 +57,7 @@ def profile(request):
         modules = request.session['modules']
         return render(request, 'adminlte/profile.html', {'modules': modules, 'usermodules': usermodules, 'usersubmodules': usersubmodules, 'userscreens': userscreens})
     messages.error(request,'Please sign in first!')
+    logger.debug('Unauthorized access blocked.')
     return redirect('login')
 
 
@@ -76,6 +80,7 @@ def product(request):
             price = request.POST['price']
 
             if Product.objects.filter(name=name).exists():
+                logger.debug('Duplicate entry blocked.')
                 messages.error(request, 'This product is already added.')
             else:
                 product = Product(name=name, category_id=category, manufacturer_id=manufacturer, unit=unit, price=price)
@@ -84,6 +89,7 @@ def product(request):
             return redirect('products')
 
         return render(request, 'adminlte/product.html', {'modules': modules, 'usermodules': usermodules, 'products': products, 'categories': categories, 'manufacturers': manufacturers, 'usersubmodules': usersubmodules, 'userscreens': userscreens, 'sideScreen': 'All Products', 'sideSub': 'Product', 'sideModule': 'Products'})
+    logger.debug('Unauthorized access blocked.')
     messages.error(request,'Please sign in first!')
     return redirect('login')
 
@@ -100,12 +106,14 @@ def edit_product(request):
             product.unit = request.POST['unit']
             product.price = request.POST['price']
             if product.name != name and Product.objects.filter(name=name).exists():
+                logger.debug('Duplicate entry blocked.')
                 messages.error(request, 'This product is already added.')
                 return redirect('products')
             product.name = name
             product.save()
             messages.success(request,'Product updated!')
         return redirect('products')
+    logger.debug('Unauthorized access blocked.')
     messages.error(request,'Please sign in first!')
     return redirect('login')
 
@@ -119,6 +127,7 @@ def delete_product(request):
             product.delete()
             messages.success(request, 'Product deleted!')
         return redirect('products')
+    logger.debug('Unauthorized access blocked.')
     return redirect('login')
 
 
@@ -134,6 +143,7 @@ def category(request):
         if request.method == 'POST':
             name = request.POST['name']
             if Category.objects.filter(name=name).exists():
+                logger.debug('Duplicate entry blocked.')
                 messages.error(request, 'This category is already added!')
             else:
                 category = Category(name=name)
@@ -141,6 +151,7 @@ def category(request):
                 messages.success(request, 'Category added!')
             return redirect('categories')
         return render(request, 'adminlte/category.html',{'categories': categories, 'modules':modules, 'usermodules': usermodules, 'usersubmodules': usersubmodules, 'userscreens':userscreens , 'sideScreen': 'Category'})
+    logger.debug('Unauthorized access blocked.')
     return redirect('login')
 
 
@@ -157,6 +168,7 @@ def edit_category(request):
         category.save()
         messages.success(request, 'Category updated!')
         return redirect('categories')
+    logger.debug('Unauthorized access blocked.')
     return redirect('login')
 
 
@@ -168,6 +180,7 @@ def delete_category(request):
         category.delete()
         messages.success(request, 'Category deleted!')
         return redirect('categories')
+    logger.debug('Unauthorized access blocked.')
     return redirect('login')
 
 
@@ -233,4 +246,5 @@ def users(request):
         modules = request.session['modules']
         return render(request,'adminlte/users.html',{'users': users, 'modules':modules, 'usermodules': usermodules, 'usersubmodules': usersubmodules, 'userscreens':userscreens, 'sideScreen': 'Users'})
     messages.error(request,'Please sign in as Admin!')
+    logger.debug('Unauthorized access blocked.')
     return redirect('login')

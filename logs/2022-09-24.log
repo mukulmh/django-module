@@ -25,7 +25,56 @@ INFO 2022-09-24 11:17:12,218 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireles
 INFO 2022-09-24 11:17:13,672 Watching for file changes with StatReloader
 INFO 2022-09-24 11:25:56,448 Watching for file changes with StatReloader
 WARNING 2022-09-24 11:55:34,217 Not Found: /logs/2022-09-24.log
-WARNING 2022-09-24 11:57:20,486 Not Found: /favicon.icoINFO 2022-09-24 13:09:11,989 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_main\urls.py changed, reloading.
+WARNING 2022-09-24 11:57:20,486 Not Found: /favicon.ico
 INFO 2022-09-24 13:09:13,750 Watching for file changes with StatReloader
 INFO 2022-09-24 13:09:28,307 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\urls.py changed, reloading.
 INFO 2022-09-24 13:09:29,856 Watching for file changes with StatReloader
+INFO 2022-09-24 15:00:18,994 Watching for file changes with StatReloader
+INFO 2022-09-24 15:08:43,390 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-24 15:08:45,131 Watching for file changes with StatReloader
+WARNING 2022-09-24 15:13:31,572 Not Found: /favicon.ico
+WARNING 2022-09-24 15:13:40,020 Not Found: /favicon.ico
+ERROR 2022-09-24 15:18:49,205 Internal Server Error: /logs/
+WARNING 2022-09-24 15:19:24,103 Not Found: /favicon.ico
+WARNING 2022-09-24 15:19:59,266 Not Found: /favicon.ico
+INFO 2022-09-24 15:53:49,095 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-24 15:53:50,606 Watching for file changes with StatReloader
+INFO 2022-09-24 16:02:51,030 Watching for file changes with StatReloader
+INFO 2022-09-24 16:04:21,677 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-24 16:04:23,368 Watching for file changes with StatReloader
+INFO 2022-09-24 16:04:25,350 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-24 16:04:26,791 Watching for file changes with StatReloader
+ERROR 2022-09-24 16:04:29,190 Internal Server Error: /logs/
+Traceback (most recent call last):
+  File "C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py", line 30, in logs
+    if line.strip() and type in line:
+TypeError: 'in <string>' requires string as left operand, not list
+INFO 2022-09-24 16:04:40,354 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-24 16:04:41,961 Watching for file changes with StatReloader
+INFO 2022-09-24 16:06:16,332 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-24 16:06:17,922 Watching for file changes with StatReloader
+WARNING 2022-09-24 16:07:11,458 Not Found: /favicon.ico
+WARNING 2022-09-24 16:15:05,146 Not Found: /favicon.ico
+INFO 2022-09-24 16:16:28,894 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-24 16:16:30,406 Watching for file changes with StatReloader
+INFO 2022-09-24 16:16:34,128 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-24 16:16:35,936 Watching for file changes with StatReloader
+WARNING 2022-09-24 16:24:06,473 Not Found: /favicon.ico
+WARNING 2022-09-24 16:27:04,931 Not Found: /favicon.ico
+WARNING 2022-09-24 16:28:37,547 Not Found: /favicon.ico
+INFO 2022-09-24 16:57:52,551 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_main\settings.py changed, reloading.
+INFO 2022-09-24 16:57:54,203 Watching for file changes with StatReloader
+INFO 2022-09-24 17:00:56 Watching for file changes with StatReloader
+WARNING 2022-09-24 17:01:54 Not Found: /favicon.ico
+WARNING 2022-09-24 17:02:00 Not Found: /favicon.ico
+INFO 2022-09-24 17:14:24 Watching for file changes with StatReloader
+WARNING 2022-09-24 17:14:26 User logged out.
+DEBUG 2022-09-24 17:14:30 Invalid form request.
+ERROR 2022-09-24 17:14:59 Invalid credentials.
+DEBUG 2022-09-24 17:14:59 Invalid form request.
+DEBUG 2022-09-24 17:16:05 Invalid form request.
+INFO 2022-09-24 17:16:15 User logged in.
