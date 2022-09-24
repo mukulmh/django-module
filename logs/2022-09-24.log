@@ -3,3 +3,29 @@ WARNING 2022-09-24 00:13:51,899 User logged out.
 ERROR 2022-09-24 00:14:00,779 Invalid credentials.
 INFO 2022-09-24 00:14:05,266 User logged in.
 WARNING 2022-09-24 00:14:32,742 User logged out.
+INFO 2022-09-24 09:27:17,327 Watching for file changes with StatReloader
+WARNING 2022-09-24 09:27:29,843 Not Found: /favicon.ico
+INFO 2022-09-24 09:28:12,096 User logged in.
+INFO 2022-09-24 09:34:38,542 Watching for file changes with StatReloader
+INFO 2022-09-24 10:10:48,146 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-24 10:10:49,731 Watching for file changes with StatReloader
+WARNING 2022-09-24 10:14:47,901 Not Found: /favicon.ico
+INFO 2022-09-24 10:18:06,084 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-24 10:18:07,749 Watching for file changes with StatReloader
+INFO 2022-09-24 10:21:35,745 Watching for file changes with StatReloader
+WARNING 2022-09-24 10:21:49,914 Not Found: /favicon.ico
+INFO 2022-09-24 10:29:23,903 Watching for file changes with StatReloader
+INFO 2022-09-24 11:15:19,977 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-24 11:15:22,323 Watching for file changes with StatReloader
+INFO 2022-09-24 11:17:05,291 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-24 11:17:06,952 Watching for file changes with StatReloader
+INFO 2022-09-24 11:17:08,805 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-24 11:17:10,464 Watching for file changes with StatReloader
+INFO 2022-09-24 11:17:12,218 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-24 11:17:13,672 Watching for file changes with StatReloader
+INFO 2022-09-24 11:25:56,448 Watching for file changes with StatReloader
+WARNING 2022-09-24 11:55:34,217 Not Found: /logs/2022-09-24.log
+WARNING 2022-09-24 11:57:20,486 Not Found: /favicon.icoINFO 2022-09-24 13:09:11,989 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_main\urls.py changed, reloading.
+INFO 2022-09-24 13:09:13,750 Watching for file changes with StatReloader
+INFO 2022-09-24 13:09:28,307 C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\urls.py changed, reloading.
+INFO 2022-09-24 13:09:29,856 Watching for file changes with StatReloader
