@@ -1,0 +1,84 @@
+INFO 2022-09-25 09:23:59 Watching for file changes with StatReloader
+DEBUG 2022-09-25 09:24:39 Unauthorized access blocked.
+WARNING 2022-09-25 09:24:42 Not Found: /favicon.ico
+DEBUG 2022-09-25 09:25:13 Invalid form request.
+INFO 2022-09-25 09:25:24 User logged in.
+INFO 2022-09-25 10:10:53 Watching for file changes with StatReloader
+INFO 2022-09-25 10:31:37 Watching for file changes with StatReloader
+WARNING 2022-09-25 10:45:47 Not Found: /favicon.ico
+INFO 2022-09-25 11:56:14 run_with_reloader Watching for file changes with StatReloader
+WARNING 2022-09-25 11:56:32 log_response Not Found: /favicon.ico
+WARNING 2022-09-25 11:57:45 log_response Not Found: /favicon.ico
+WARNING 2022-09-25 11:59:09 sign_out User logged out.
+INFO 2022-09-25 11:59:27 login User logged in.
+INFO 2022-09-25 13:00:52 run_with_reloader Watching for file changes with StatReloader
+ERROR 2022-09-25 13:01:09 log_response Internal Server Error: /logs/debug/
+Traceback (most recent call last):
+  File "C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py", line 94, in logs
+    return render(request,'logs/logs')
+  File "C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\env\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\env\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\env\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: logs/logs
+INFO 2022-09-25 13:01:33 trigger_reload C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-25 13:01:35 run_with_reloader Watching for file changes with StatReloader
+INFO 2022-09-25 13:01:44 trigger_reload C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-25 13:01:45 run_with_reloader Watching for file changes with StatReloader
+ERROR 2022-09-25 13:01:49 log_response Internal Server Error: /logs/debug/
+Traceback (most recent call last):
+  File "C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py", line 94, in logs
+    return render(request,'logger/logs')
+  File "C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\env\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\env\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\env\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: logger/logs
+INFO 2022-09-25 13:02:03 trigger_reload C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-25 13:02:04 run_with_reloader Watching for file changes with StatReloader
+INFO 2022-09-25 13:20:56 trigger_reload C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-25 13:20:58 run_with_reloader Watching for file changes with StatReloader
+INFO 2022-09-25 13:21:12 trigger_reload C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-25 13:21:14 run_with_reloader Watching for file changes with StatReloader
+INFO 2022-09-25 13:21:18 trigger_reload C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-25 13:21:20 run_with_reloader Watching for file changes with StatReloader
+INFO 2022-09-25 13:22:49 trigger_reload C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-25 13:22:51 run_with_reloader Watching for file changes with StatReloader
+INFO 2022-09-25 13:22:52 trigger_reload C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-25 13:22:54 run_with_reloader Watching for file changes with StatReloader
+INFO 2022-09-25 13:23:34 trigger_reload C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-25 13:23:36 run_with_reloader Watching for file changes with StatReloader
+INFO 2022-09-25 13:23:42 trigger_reload C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-25 13:23:44 run_with_reloader Watching for file changes with StatReloader
+INFO 2022-09-25 13:23:53 trigger_reload C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-25 13:23:55 run_with_reloader Watching for file changes with StatReloader
+INFO 2022-09-25 13:24:38 trigger_reload C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-25 13:24:40 run_with_reloader Watching for file changes with StatReloader
+INFO 2022-09-25 13:24:45 trigger_reload C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-25 13:24:47 run_with_reloader Watching for file changes with StatReloader
+INFO 2022-09-25 13:24:50 trigger_reload C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-25 13:24:52 run_with_reloader Watching for file changes with StatReloader
+INFO 2022-09-25 13:25:02 trigger_reload C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-25 13:25:04 run_with_reloader Watching for file changes with StatReloader
+INFO 2022-09-25 13:28:22 run_with_reloader Watching for file changes with StatReloader
+INFO 2022-09-25 13:29:35 trigger_reload C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-25 13:29:37 run_with_reloader Watching for file changes with StatReloader
+INFO 2022-09-25 13:30:22 run_with_reloader Watching for file changes with StatReloader
+INFO 2022-09-25 13:31:52 trigger_reload C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-25 13:31:54 run_with_reloader Watching for file changes with StatReloader
+INFO 2022-09-25 13:31:56 trigger_reload C:\Users\Mehedy H Mukul\Desktop\Web Dev\SSL Wireless Intern\Django\AdminLTE\app_logviewer\views.py changed, reloading.
+INFO 2022-09-25 13:31:58 run_with_reloader Watching for file changes with StatReloader
+WARNING 2022-09-25 13:35:01 log_response Not Found: /favicon.ico
+INFO 2022-09-25 14:58:13 run_with_reloader Watching for file changes with StatReloader

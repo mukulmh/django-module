@@ -78,3 +78,5 @@ ERROR 2022-09-24 17:14:59 Invalid credentials.
 DEBUG 2022-09-24 17:14:59 Invalid form request.
 DEBUG 2022-09-24 17:16:05 Invalid form request.
 INFO 2022-09-24 17:16:15 User logged in.
+WARNING 2022-09-24 18:36:28 Not Found: /favicon.ico
+WARNING 2022-09-24 18:36:30 Not Found: /favicon.ico
