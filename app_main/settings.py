@@ -191,3 +191,5 @@ LOGGING = {
         },
     },
 }
+
+CSRF_TRUSTED_ORIGINS=['https://adminlte.up.railway.app/']
