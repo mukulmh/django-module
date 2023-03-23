@@ -25,3 +25,5 @@ INFO 2023-03-23 07:29:20 trigger_reload /home/mukul/Desktop/django-module/app_ma
 INFO 2023-03-23 07:29:30 run_with_reloader Watching for file changes with StatReloader
 INFO 2023-03-23 07:30:25 trigger_reload /home/mukul/Desktop/django-module/app_main/settings.py changed, reloading.
 INFO 2023-03-23 07:30:26 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-03-23 07:36:33 trigger_reload /home/mukul/Desktop/django-module/app_main/settings.py changed, reloading.
+INFO 2023-03-23 07:36:34 run_with_reloader Watching for file changes with StatReloader
